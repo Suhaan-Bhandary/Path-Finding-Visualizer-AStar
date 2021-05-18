@@ -123,7 +123,6 @@ export default class PathfindingVisualizer extends Component {
   animateShortestPath(nodesInShortestPathOrder) {
     let timeTaken = 0;
     for (let i = 1; i < nodesInShortestPathOrder.length - 1; i++) {
-      timeTaken += nodesInShortestPathOrder[i].weight + 1;
       setTimeout(() => {
         const node = nodesInShortestPathOrder[i];
         if (nodesInShortestPathOrder[i].isWeight) {
@@ -137,6 +136,8 @@ export default class PathfindingVisualizer extends Component {
 
     }
 
+    timeTaken =
+      nodesInShortestPathOrder[nodesInShortestPathOrder.length - 1].distance;
     this.setState({ distanceToBeTraveled: timeTaken });
   }
 
