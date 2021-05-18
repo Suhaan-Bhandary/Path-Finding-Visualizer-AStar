@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/Path-Finding-Visualizer/static/css/main.84e57a77.chunk.css",
-    "main.js": "/Path-Finding-Visualizer/static/js/main.8fc540cd.chunk.js",
-    "main.js.map": "/Path-Finding-Visualizer/static/js/main.8fc540cd.chunk.js.map",
-    "runtime-main.js": "/Path-Finding-Visualizer/static/js/runtime-main.8e08c3d9.js",
-    "runtime-main.js.map": "/Path-Finding-Visualizer/static/js/runtime-main.8e08c3d9.js.map",
-    "static/js/2.1d6f89a3.chunk.js": "/Path-Finding-Visualizer/static/js/2.1d6f89a3.chunk.js",
-    "static/js/2.1d6f89a3.chunk.js.map": "/Path-Finding-Visualizer/static/js/2.1d6f89a3.chunk.js.map",
-    "static/js/3.21572000.chunk.js": "/Path-Finding-Visualizer/static/js/3.21572000.chunk.js",
-    "static/js/3.21572000.chunk.js.map": "/Path-Finding-Visualizer/static/js/3.21572000.chunk.js.map",
-    "index.html": "/Path-Finding-Visualizer/index.html",
-    "static/css/main.84e57a77.chunk.css.map": "/Path-Finding-Visualizer/static/css/main.84e57a77.chunk.css.map",
-    "static/js/2.1d6f89a3.chunk.js.LICENSE.txt": "/Path-Finding-Visualizer/static/js/2.1d6f89a3.chunk.js.LICENSE.txt"
+    "main.css": "/Path-Finding-Visualizer-AStar/static/css/main.84e57a77.chunk.css",
+    "main.js": "/Path-Finding-Visualizer-AStar/static/js/main.8fc540cd.chunk.js",
+    "main.js.map": "/Path-Finding-Visualizer-AStar/static/js/main.8fc540cd.chunk.js.map",
+    "runtime-main.js": "/Path-Finding-Visualizer-AStar/static/js/runtime-main.caa532fd.js",
+    "runtime-main.js.map": "/Path-Finding-Visualizer-AStar/static/js/runtime-main.caa532fd.js.map",
+    "static/js/2.1d6f89a3.chunk.js": "/Path-Finding-Visualizer-AStar/static/js/2.1d6f89a3.chunk.js",
+    "static/js/2.1d6f89a3.chunk.js.map": "/Path-Finding-Visualizer-AStar/static/js/2.1d6f89a3.chunk.js.map",
+    "static/js/3.21572000.chunk.js": "/Path-Finding-Visualizer-AStar/static/js/3.21572000.chunk.js",
+    "static/js/3.21572000.chunk.js.map": "/Path-Finding-Visualizer-AStar/static/js/3.21572000.chunk.js.map",
+    "index.html": "/Path-Finding-Visualizer-AStar/index.html",
+    "static/css/main.84e57a77.chunk.css.map": "/Path-Finding-Visualizer-AStar/static/css/main.84e57a77.chunk.css.map",
+    "static/js/2.1d6f89a3.chunk.js.LICENSE.txt": "/Path-Finding-Visualizer-AStar/static/js/2.1d6f89a3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.8e08c3d9.js",
+    "static/js/runtime-main.caa532fd.js",
     "static/js/2.1d6f89a3.chunk.js",
     "static/css/main.84e57a77.chunk.css",
     "static/js/main.8fc540cd.chunk.js"
