@@ -12,7 +12,7 @@ export function aStar(grid, startNode, endNode) {
   const unvisitedNodes = getAllNodes(grid);
 
   while (unvisitedNodes.length) {
-    sortNodesByDistance(unvisitedNodes);
+    sortNodesByDistance(unvisitedNodes, endNode);
     const closestNode = unvisitedNodes.shift();
 
     // If we encounter a wall, we skip it.
@@ -28,27 +28,38 @@ export function aStar(grid, startNode, endNode) {
     // Checking for the success condition.
     if (closestNode === endNode) return visitedNodesInOrder;
 
-    updateUnvisitedNeighbors(closestNode, grid, endNode, visitedNodesInOrder);
+    updateUnvisitedNeighbors(closestNode, grid);
   }
 }
 
 // Sorts the unvisitedNodes every time it is called.
-function sortNodesByDistance(unvisitedNodes) {
-  unvisitedNodes.sort((nodeA, nodeB) => nodeA.distance - nodeB.distance);
+function sortNodesByDistance(unvisitedNodes, endNode) {
+  unvisitedNodes.sort((nodeA, nodeB) => {
+    let distance_between_current_node_end_node_A = Math.sqrt(
+      Math.pow(nodeA.row - endNode.row, 2) +
+        Math.pow(nodeA.col - endNode.col, 2)
+    );
+
+    let distance_between_current_node_end_node_B = Math.sqrt(
+      Math.pow(nodeB.row - endNode.row, 2) +
+        Math.pow(nodeB.col - endNode.col, 2)
+    );
+
+    return (
+      nodeA.distance +
+      distance_between_current_node_end_node_A -
+      (nodeB.distance + distance_between_current_node_end_node_B)
+    );
+  });
 }
 
 // Sets the neighbour nodes distance and also the previous node property.
-function updateUnvisitedNeighbors(node, grid, endNode, visitedNodesInOrder) {
+function updateUnvisitedNeighbors(node, grid) {
   const unvisitedNeighbors = getUnvisitedNeighbors(node, grid);
   for (const neighbor of unvisitedNeighbors) {
-    let distance_between_current_node_end_node = Math.sqrt(
-      Math.pow(node.row - endNode.row, 2) + Math.pow(node.col - endNode.col, 2)
-    );
-
     neighbor.distance =
       node.distance + // current node
       neighbor.weight + // upcoming node weight if it has else 0
-      distance_between_current_node_end_node + // fixed distance between current node and end node.
       1;
 
     // Now the neighbor distance is not infinity and because of it it will show among the top in unvisited nodes.
