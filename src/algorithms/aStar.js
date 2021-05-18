@@ -23,7 +23,7 @@ export function aStar(grid, startNode, endNode) {
     // If the closest node is at a distance of infinity,
     // we must be trapped and should therefore stop.
     if (closestNode.distance === Infinity) return visitedNodesInOrder;
-    closestNode.isVisited = true;
+    closestNode.isVisited = true; // * This is not used in the code it can be used if necessary to keep track of the nodes.
 
     // Checking for the success condition.
     if (closestNode === endNode) return visitedNodesInOrder;
@@ -38,7 +38,7 @@ function sortNodesByDistance(unvisitedNodes, endNode) {
     let distance_between_current_node_end_node_A = Math.sqrt(
       Math.pow(nodeA.row - endNode.row, 2) +
         Math.pow(nodeA.col - endNode.col, 2)
-    );
+    ); // *It is its heurostic characteristics
 
     let distance_between_current_node_end_node_B = Math.sqrt(
       Math.pow(nodeB.row - endNode.row, 2) +
@@ -76,7 +76,9 @@ function getUnvisitedNeighbors(node, grid) {
   if (col > 0) neighbors.push(grid[row][col - 1]);
   if (col < grid[0].length - 1) neighbors.push(grid[row][col + 1]);
 
-  return neighbors.filter((neighbor) => !neighbor.isVisited); // filtering the visited node
+  return neighbors.filter(
+    (neighbor) => node.distance + 1 + neighbor.weight < neighbor.distance
+  ); // filtering the visited node
 }
 
 function getAllNodes(grid) {
