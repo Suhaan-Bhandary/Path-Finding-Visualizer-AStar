@@ -35,20 +35,29 @@ export function aStar(grid, startNode, endNode) {
 // Sorts the unvisitedNodes every time it is called.
 function sortNodesByDistance(unvisitedNodes, endNode) {
   unvisitedNodes.sort((nodeA, nodeB) => {
-    let distance_between_current_node_end_node_A = Math.sqrt(
-      Math.pow(nodeA.row - endNode.row, 2) +
-        Math.pow(nodeA.col - endNode.col, 2)
-    ); // *It is its heurostic characteristics
+    let total_distance_between_current_node_end_node_A =
+      Math.sqrt(
+        Math.pow(nodeA.row - endNode.row, 2) +
+          Math.pow(nodeA.col - endNode.col, 2)
+      ) + nodeA.distance; // *It is its heurostic characteristics
 
-    let distance_between_current_node_end_node_B = Math.sqrt(
-      Math.pow(nodeB.row - endNode.row, 2) +
-        Math.pow(nodeB.col - endNode.col, 2)
-    );
+    let total_distance_between_current_node_end_node_B =
+      Math.sqrt(
+        Math.pow(nodeB.row - endNode.row, 2) +
+          Math.pow(nodeB.col - endNode.col, 2)
+      ) + nodeB.distance;
+
+    if (
+      total_distance_between_current_node_end_node_A -
+        total_distance_between_current_node_end_node_B ===
+      0
+    ) {
+      return nodeA.distance - nodeB.distance;
+    }
 
     return (
-      nodeA.distance +
-      distance_between_current_node_end_node_A -
-      (nodeB.distance + distance_between_current_node_end_node_B)
+      total_distance_between_current_node_end_node_A -
+      total_distance_between_current_node_end_node_B
     );
   });
 }
